@@ -1,0 +1,10 @@
+Billing Policy
+
+Overview:
+Our billing system posts charges after 24 hours of service usage. Customers may see estimated costs in the dashboard before final settlement.
+
+Duplicate charge review:
+If a customer reports duplicate charges, support should verify the order ID, transaction ID, and billing cycle. Refunds may be issued when duplicate invoices are confirmed.
+
+Refund requests:
+Refunds are handled within 5 working days. Pending refunds are subject to account validation and may require additional verification from the billing team.

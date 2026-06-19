@@ -1,0 +1,10 @@
+Billing FAQ
+
+Q: How do I update my payment method?
+A: Sign in to the billing portal, navigate to Payment Methods, and add a new card. Set it as default if needed.
+
+Q: Why did I receive a prorated charge?
+A: Prorated charges occur when you change plans mid-cycle. The system bills only for the remaining portion of the billing period.
+
+Q: How are usage fees calculated?
+A: Usage fees are based on API calls, data volume, and premium feature usage recorded during the billing period.
