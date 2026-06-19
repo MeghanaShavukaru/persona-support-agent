@@ -13,17 +13,22 @@ from persona_support_agent.response import AdaptiveResponder
 
 load_dotenv()
 
-for key in (
-    "GEMINI_API_KEY",
-    "GENAI_API_KEY",
-    "GEMINI_MODEL_CLASSIFIER",
-    "GEMINI_MODEL_GENERATOR",
-    "GEMINI_MODEL_EMBEDDING",
-    "CHROMA_DB_DIR",
-    "DATA_DIR",
-):
-    if key in st.secrets:
-        os.environ[key] = str(st.secrets[key])
+try:
+    streamlit_secrets = dict(st.secrets)
+except Exception:
+    streamlit_secrets = {}
+
+for key, value in streamlit_secrets.items():
+    if key in {
+        "GEMINI_API_KEY",
+        "GENAI_API_KEY",
+        "GEMINI_MODEL_CLASSIFIER",
+        "GEMINI_MODEL_GENERATOR",
+        "GEMINI_MODEL_EMBEDDING",
+        "CHROMA_DB_DIR",
+        "DATA_DIR",
+    }:
+        os.environ[key] = str(value)
 
 
 def main():
