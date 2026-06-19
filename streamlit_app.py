@@ -1,13 +1,29 @@
 import os
+import sys
+from pathlib import Path
 
 import streamlit as st
 from dotenv import load_dotenv
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
 from persona_support_agent.classifier import PersonaClassifier
 from persona_support_agent.rag import LocalRAGPipeline
 from persona_support_agent.response import AdaptiveResponder
 
 load_dotenv()
+
+for key in (
+    "GEMINI_API_KEY",
+    "GENAI_API_KEY",
+    "GEMINI_MODEL_CLASSIFIER",
+    "GEMINI_MODEL_GENERATOR",
+    "GEMINI_MODEL_EMBEDDING",
+    "CHROMA_DB_DIR",
+    "DATA_DIR",
+):
+    if key in st.secrets:
+        os.environ[key] = str(st.secrets[key])
 
 
 def main():
